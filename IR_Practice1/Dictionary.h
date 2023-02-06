@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <vector>
 #include "DefaultAddPolicy.h"
+#include "MapPolicy.h"
 
 template
 <
@@ -116,7 +117,7 @@ using StdSearchMapDict = Dictionary
 	std::string, 
 	std::size_t, 
 	map, 
-	StdSearchPolicy
+	MapPolicy
 >;
 
 using StdSearchArrayDict = Dictionary

@@ -144,6 +144,7 @@
     <ClInclude Include="DefaultAddPolicy.h" />
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="ISerializer.h" />
+    <ClInclude Include="MapPolicy.h" />
     <ClInclude Include="TextFileSerializer.h" />
   </ItemGroup>
   <ItemGroup>

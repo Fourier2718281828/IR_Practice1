@@ -14,6 +14,9 @@
     <ClInclude Include="TextFileSerializer.h">
       <Filter>Serialization</Filter>
     </ClInclude>
+    <ClInclude Include="MapPolicy.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Policies">
