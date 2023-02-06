@@ -57,8 +57,15 @@ void test(const std::string& dirpath, const std::string& outpath)
 
 		cout << ">------------------------------------------<\n";
 
-		ISerializer<Dictionary>* ser = new TextFileSerializer();
-
+		ISerializer<Dictionary>* ser;
+		if constexpr (std::is_same_v<Dictionary, StdSearchArrayDict>)
+		{
+			ser = new TextFileSerializerArray();
+		}
+		else
+		{
+			ser = new TextFileSerializerMap();
+		}
 		cout << "# Serialization processing...\n";
 		auto start = std::chrono::steady_clock::now();
 		ser->serialize(outpath, dict);
@@ -107,9 +114,10 @@ void test(const std::string& dirpath, const std::string& outpath)
 int main()
 {
 	const std::string path = "Input Files/";
-	const std::string output = "Output Files/output.txt";
-	test<StdSearchMapDict>(path, output);
-	test<StdSearchArrayDict>(path, output);
+	const std::string outputArray = "Output Files/outputArray.txt";
+	const std::string outputMap = "Output Files/outputMap.txt";
+	test<StdSearchMapDict>(path, outputMap);
+	test<StdSearchArrayDict>(path, outputArray);
 	StdSearchArrayDict d1, d2;
 	check_for_equality(d1, d2);
 
