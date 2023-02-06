@@ -19,11 +19,11 @@ void stripUnicode(std::string& str)
 	str.erase(std::remove_if(str.begin(), str.end(), &invalidChar), str.end());
 }
 
-//template<typename Dictionary>
-class LineReader : public IReader<StdSearchMapDict>
+template<typename Dictionary>
+class LineReader : public IReader<Dictionary>
 {
 public:
-	using dict_type = StdSearchMapDict;
+	using dict_type = Dictionary;
 
 public:
 
@@ -32,10 +32,11 @@ public:
 
 public:
 
-	void read(const std::string& filename, dict_type& res) const override
+	size_t read(const std::string& filename, dict_type& res) const override
 	{
 		std::string line;
 		std::ifstream file(filename);
+		size_t words_total_count = 0u;
 		if (file.is_open())
 		{
 			while (std::getline(file, line))
@@ -45,10 +46,14 @@ public:
 				auto words = tokenize(line, delims_);
 				for (auto&& word : words)
 				{
-					if(!word.empty())
-						res.add_word(word);
+					if (!word.empty())
+					{
+						res.add_word(word); 
+						++words_total_count;
+					}
 				}
 			}
+			return words_total_count;
 		}
 		else
 		{

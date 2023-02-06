@@ -6,7 +6,7 @@ template<typename Dictionary>
 class IReader
 {
 public:
-	virtual void read(const std::string&, Dictionary&) const = 0;
+	virtual size_t read(const std::string&, Dictionary&) const = 0;
 };
 
 #endif // !IREADER_

@@ -20,7 +20,6 @@ public:
 	using index_type = IndexType;
 	using container_type = Container<word_type, index_type>;
 	using value_type = typename container_type::value_type;
-private:
 	using policy_type = AddElementPolicy<word_type>;
 public:
 	static_assert(std::is_same_v<typename policy_type::word_type, word_type>,
