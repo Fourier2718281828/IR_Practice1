@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="DefaultAddPolicy.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchPolicy.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Policies">
+      <UniqueIdentifier>{06041bee-874d-4a87-954e-09fd8db8b5ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>
