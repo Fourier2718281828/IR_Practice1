@@ -17,6 +17,13 @@
     <ClInclude Include="MapPolicy.h">
       <Filter>Policies</Filter>
     </ClInclude>
+    <ClInclude Include="IReader.h">
+      <Filter>Reading</Filter>
+    </ClInclude>
+    <ClInclude Include="LineReader.h">
+      <Filter>Reading</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Policies">
@@ -24,6 +31,9 @@
     </Filter>
     <Filter Include="Serialization">
       <UniqueIdentifier>{3d92f3d8-b44b-4c48-b589-04e942529928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reading">
+      <UniqueIdentifier>{36ab16ea-c785-48f5-81ed-b457c8c94f3e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
