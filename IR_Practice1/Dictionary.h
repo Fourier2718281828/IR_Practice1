@@ -17,9 +17,7 @@ class Dictionary
 public:
 	using word_type = WordType;
 	using index_type = IndexType;
-private:
 	using container_type = Container<word_type, index_type>;
-public:
 	using value_type = typename container_type::value_type;
 private:
 	using policy_type = AddElementPolicy<word_type>;
@@ -32,13 +30,17 @@ public:
 
 	constexpr Dictionary() noexcept : container_{} {}
 
+	constexpr Dictionary(container_type&& container) noexcept :
+		container_(std::move(container))
+	{}
+
 	Dictionary(const Dictionary&) = delete;
 
 	Dictionary& operator=(const Dictionary&) = delete;
 
-	Dictionary(Dictionary&&) = default;
+	Dictionary(Dictionary&&) noexcept = default;
 
-	Dictionary& operator=(Dictionary&&) = default;
+	Dictionary& operator=(Dictionary&&) noexcept = default;
 
 public:
 
@@ -50,6 +52,11 @@ public:
 	void add_word(word_type&& word)
 	{
 		policy_type::add_word(container_, std::move(word));
+	}
+
+	typename container_type::size_type size() const noexcept
+	{
+		return container_.size();
 	}
 
 	[[nodiscard]] bool has_word(const word_type& word) const noexcept

@@ -8,10 +8,19 @@
     <ClInclude Include="BinarySearchPolicy.h">
       <Filter>Policies</Filter>
     </ClInclude>
+    <ClInclude Include="ISerializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFileSerializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Policies">
       <UniqueIdentifier>{06041bee-874d-4a87-954e-09fd8db8b5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Serialization">
+      <UniqueIdentifier>{3d92f3d8-b44b-4c48-b589-04e942529928}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

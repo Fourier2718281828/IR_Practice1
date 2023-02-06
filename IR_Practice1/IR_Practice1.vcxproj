@@ -143,6 +143,8 @@
     <ClInclude Include="BinarySearchPolicy.h" />
     <ClInclude Include="DefaultAddPolicy.h" />
     <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="ISerializer.h" />
+    <ClInclude Include="TextFileSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

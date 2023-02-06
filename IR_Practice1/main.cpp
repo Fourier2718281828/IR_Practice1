@@ -1,4 +1,6 @@
 #include <iostream>
+#include "ISerializer.h"
+#include "TextFileSerializer.h"
 #include "Dictionary.h"
 using std::cout;
 
@@ -28,6 +30,11 @@ int main()
 	cout << dict.has_word("Fucky2") << '\n';
 	cout << dict.has_word("Fucky3") << '\n';
 	cout << dict.has_word("Fucky4") << '\n';
+	
+	ISerializer<StdSearchArrayDict>* ser = new TextFileSerializer();
+	ser->serialize("myFile.txt", dict);
+	auto dasa = ser->deserialize("myFile.txt");
+	delete ser;
 
 	return EXIT_SUCCESS;
 }
