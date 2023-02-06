@@ -4,10 +4,11 @@
 #include "Dictionary.h"
 
 //template<typename Dictionary>
-class TextFileSerializer : public ISerializer<StdSearchMapDict>
+using Dict = StdSearchMapDict;
+class TextFileSerializer : public ISerializer<Dict>
 {
 public:
-	void serialize(const std::string& filename, const StdSearchMapDict& dict) const override
+	void serialize(const std::string& filename, const Dict& dict) const override
 	{
 		std::ofstream fout(filename);
 		if (fout.is_open())
@@ -27,15 +28,15 @@ public:
 		fout.close();
 	}
 
-	StdSearchMapDict deserialize(const std::string& filename) const override
+	Dict deserialize(const std::string& filename) const override
 	{
 		std::ifstream fin(filename);
 		if (fin.is_open())
 		{
-			StdSearchMapDict::container_type res{};
+			Dict::container_type res{};
 			decltype(res)::size_type size;
-			StdSearchMapDict::index_type read_count;
-			StdSearchMapDict::word_type read_word;
+			Dict::index_type read_count;
+			Dict::word_type read_word;
 
 			fin >> size;
 
@@ -45,7 +46,7 @@ public:
 				res.insert({ read_word, read_count });
 			}
 
-			return StdSearchMapDict{ std::move(res) };
+			return Dict{ std::move(res) };
 		}
 		else
 		{

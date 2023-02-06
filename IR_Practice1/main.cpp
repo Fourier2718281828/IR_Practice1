@@ -57,7 +57,7 @@ void test(const std::string& dirpath, const std::string& outpath)
 
 		cout << ">------------------------------------------<\n";
 
-		ISerializer<StdSearchMapDict>* ser = new TextFileSerializer();
+		ISerializer<Dictionary>* ser = new TextFileSerializer();
 
 		cout << "# Serialization processing...\n";
 		auto start = std::chrono::steady_clock::now();
